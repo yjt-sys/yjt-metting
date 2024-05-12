@@ -7,7 +7,7 @@ export default defineConfig({
   resolve:{
     alias:{
         "@":path.resolve(__dirname,"./src"),//配置src路径为@
-        "@assets":path.resolve(__dirname,"./src/assets")//配置assets路径为@assets
-    }
+        "@assets":path.resolve(__dirname,"./src/assets"),//配置assets路径为@assets
+      }
 },
 })

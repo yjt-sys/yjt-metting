@@ -7,7 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('server:server');
 var http = require('http');
-
+const { v4: uuidv4 } = require('uuid');
 /**
  * Get port from environment and store in Express.
  */
@@ -20,13 +20,8 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-// 传递server对象，初始化一个io实例
-const io = require('socket.io')(server, {
-  cors: {
-    origin: '*',
-    methods: ['GET', 'POST'],
-  },
-});
+var socket = require('../routes/index');
+socket.init(server);
 /**
  * Listen on provided port, on all network interfaces.
  */

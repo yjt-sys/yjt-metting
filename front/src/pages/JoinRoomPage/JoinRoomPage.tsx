@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import JoinRoomTitle from './JoinRoomTitle';
 import './JoinRoomPage.css';
 import JoinRoomContent from './JoinRoomContent';
-// import JoinRoomContent from './JoinRoomContent';
-import { setIsRoomHost,type appInitialStateProps } from '../../store/modules/app'
+import { setIsRoomHost,type appInitialStateProps } from '@/store/modules/app'
+import { Card } from 'antd';
 const JoinRoomPage: React.FC = () => {
     const state = useSelector((state: { app: appInitialStateProps }) => state.app)
     const dispatch = useDispatch()
@@ -22,10 +22,10 @@ const JoinRoomPage: React.FC = () => {
     return (
         <>
             <div className='join_room_page_container'>
-                <div className='join_room_page_panel'>
+                <Card>
                     <JoinRoomTitle isRoomHost={state.isRoomHost} />
                     <JoinRoomContent />
-                </div>
+                </Card>
             </div>
         </>
     )

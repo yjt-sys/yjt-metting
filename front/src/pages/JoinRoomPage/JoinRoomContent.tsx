@@ -4,8 +4,8 @@ import ErrorMessage from './ErrorMessage';
 import JoinRoomButtons from './JoinRoomButtons';
 import OnlyWithAudioCheckbox from './OnlyWithAudioCheckbox';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRoomExists } from '../../services/api';
-import {  setConnectOnlyWithAudio, setIdentity, setRoomId, type appInitialStateProps } from '../../store/modules/app'
+import { getRoomExists } from '@/services/api';
+import {  setConnectOnlyWithAudio, setIdentity, setRoomId, type appInitialStateProps } from '@/store/modules/app'
 import { useNavigate } from 'react-router-dom';
 const JoinRoomContent: React.FC = () => {
     const dispatch = useDispatch();

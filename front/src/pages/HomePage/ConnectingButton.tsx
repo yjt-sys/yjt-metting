@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Button } from 'antd'
 //定义接口类型
 interface Props{
   createRoomButton?: boolean;
@@ -14,12 +14,12 @@ const ConnectingButton:React.FC<Props> = ({
 }) => {
   //判断按钮样式
   const buttonClass = createRoomButton
-    ? 'create_room_button'
-    : 'join_room_button';
+    ? 'primary'
+    : undefined;
   return (
-    <button className={buttonClass} onClick={onClickHandler}>
+    <Button type={buttonClass} onClick={onClickHandler} style={{margin:"10px",width:"100px"}}>
       {buttonText}
-    </button>
+    </Button>
   );
 };
 

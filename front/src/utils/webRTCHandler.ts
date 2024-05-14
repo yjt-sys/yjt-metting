@@ -72,21 +72,13 @@ const messageChannel = "messager";
 
 //准备webRTC连接
 export const prepareNewPeerConnection =(connUserSocketId:string, isInitiator:boolean) => {
-  console.log(connUserSocketId,isInitiator,'445454545445');
   
   const configuration =getConfiguration();
-  console.log('888888456456',configuration);
   
   //实例化对等连接对象
   peers[connUserSocketId] = new Peer({
     initiator: isInitiator,
-    config: {
-      iceServers: [
-        {
-          urls: "stun:stun1.l.google.com:19302",
-        },
-      ],
-    },
+    config: configuration,
     stream: localStream,
     channelName: messageChannel,
   });
